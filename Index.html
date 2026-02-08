@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proposal Page</title>
+    <style>
+        /* تصميم الصفحة */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff0066;
+            margin-bottom: 50px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you marry me?</h1>
+    <button id="yesBtn">Yes 💖</button>
+    <button id="noBtn">No 😅</button>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+
+        // الزر "No" كيتحرك ملي يحاول الشخص يضغط عليه
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight - 100)) + 50;
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        const yesBtn = document.getElementById('yesBtn');
+        yesBtn.addEventListener('click', () => {
+            alert("Yay! 💍 Thank you! ❤️");
+        });
+    </script>
+
+</body>
+</html>
